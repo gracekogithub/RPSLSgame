@@ -11,12 +11,16 @@ namespace RPSLS
         //variables
         public string personName;
         public Gesture gestureOption;
+        
 
 
 
         //constructor
         public HumanPlayers(string personName, string gestureOption)
         {
+            
+            
+            
             this.personName = personName;
             this.gestureOption = new Gesture(gestureOption);
         }

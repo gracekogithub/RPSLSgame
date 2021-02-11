@@ -8,5 +8,13 @@ namespace RPSLS
 {
     class Player
     {
+        public string player;
+        public Player(string player) 
+        {
+            this.player = player;
+        }
+
+
+        
     }
 }

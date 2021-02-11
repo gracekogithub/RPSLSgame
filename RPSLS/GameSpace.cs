@@ -10,7 +10,6 @@ namespace RPSLS
     {
         //variables
         public PlayerStage player;
-        public bool turn;
         public List<Gesture> option;
         //constructor
         public GameSpace()
@@ -30,7 +29,6 @@ namespace RPSLS
             option.Add(gestureOption5);
 
         }
-        //game rule
         //players: 3 people and 1 Ai
         //choose 2 players(human vs human)
         //play 3 times to select a winner
@@ -40,28 +38,28 @@ namespace RPSLS
         //claim winner
 
         //method
+        public void PlayGame()
+        {
+            Console.WriteLine("Welcome! This is the rule how to play.");
+            SetRule();
+        }
         public void SetRule()
         {
-            for (int i=1; ; i++)
-            {
-                
-            }
-          
-
+            Console.WriteLine("Rock crushes Scissors\n" +
+                              "Scissors cuts Paper\n"+
+                              "Paper covers Rock\n"+
+                              "Rock crushes Lizard\n"+
+                              "Lizard poisons Spock\n"+
+                              "Spock smashes Scissors\n"+
+                              "Scissors decapitates Lizard\n"+
+                              "Lizard eats Paper\n"+
+                              "Paper disproves Spock\n"+
+                              "Spock vaporizes Rock");
         }
-        
-            
-            //Rock crushes Scissors
-            //Scissors cuts Paper
-            //Paper covers Rock
-            //Rock crushes Lizard
-            //Lizard poisons Spock
-            //Spock smashes Scissors
-            //Scissors decapitates Lizard
-            //Lizard eats Paper
-            //Paper disproves Spock
-            //Spock vaporizes Rock
-        
+
+
+
+
 
     }
 }

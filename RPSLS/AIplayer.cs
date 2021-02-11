@@ -17,6 +17,6 @@ namespace RPSLS
             this.aiNickName = aiNickName;
         }
         //method
-
+        
     }
 }
