@@ -12,8 +12,9 @@ namespace RPSLS
         public string inputUser;
         public List<HumanPlayers> personN;
         public AIplayer computer;
-        //public string[] gesture;
-        public List<GestureOption> gestureN;
+        public string[] gesture;
+
+        //public List<string> gesture;
 
         public int winningScore;
         public int loosingScore;
@@ -22,10 +23,11 @@ namespace RPSLS
         //constructor
         public GameSpace()
         {
-            inputUser = inputUser;
+            this.inputUser = inputUser;
             personN = new List<HumanPlayers>();
             computer = new AIplayer("");
-            gestureN = new List<GestureOption>();
+            //gesture = new List<string>();
+            gesture = new string[] {"Rock","Paper","Scissors","Lizard","Spock" };
       
             winningScore = 0;
             loosingScore = 0;
@@ -56,7 +58,8 @@ namespace RPSLS
         }
         public void ChooseGesture()
         {
-            //Console.WriteLine($"Please, {personN[0].person} chose {gestureN[0].gesture}");
+            Console.WriteLine($"{personN[0].person} chose {gesture[0]}");
+
             while (playingAgain)
             {
                 //personN = "chose Rock";
