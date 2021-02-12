@@ -8,13 +8,32 @@ namespace RPSLS
 {
     class Player
     {
-        public string player;
-        public Player(string player) 
+        public string name;
+        public List<string> gestures = new List<string>();
+        public string chosenGesture;
+       
+        public Player() 
         {
-            this.player = player;
+            gestures.Add("rock");
+            gestures.Add("paper");
+            gestures.Add("scissors");
+            gestures.Add("lizard");
+            gestures.Add("spock");
+
         }
 
+        public void ComparingGesture()
+        {
+            Console.WriteLine("You win");
+            string input = Console.ReadLine();
+               
+            switch (Player)
+            {
+            
+                
+            }
 
+        }
         
     }
 }

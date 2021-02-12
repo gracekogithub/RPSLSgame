@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class AIplayer
+    class AIplayer : Player
     {
         //variables
-        public string aiNickName;
+        
 
         //constructor
-        public AIplayer(string aiNickName)
+        public AIplayer()
         {
-            this.aiNickName = aiNickName;
+            
         }
+
+        
         //method
         
     }
