@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AIplayer.cs" />
     <Compile Include="GameSpace.cs" />
+    <Compile Include="GestureOption.cs" />
     <Compile Include="HumanPlayers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

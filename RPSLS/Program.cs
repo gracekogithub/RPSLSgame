@@ -13,7 +13,7 @@ namespace RPSLS
             GameSpace play = new GameSpace();
             play.PlayGame();
 
-            Console.WriteLine();
+            
             Console.ReadLine();
         }
     }

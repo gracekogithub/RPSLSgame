@@ -9,17 +9,19 @@ namespace RPSLS
     class HumanPlayers
     {
         //variables
-        public List<string> personName; 
-
+       
+        public List<string> person;
 
         //constructor
-        public HumanPlayers(string personName)
+        public HumanPlayers(List<string> personName)
         {
-            
-           
-            List<string> person= new List<string> { "John","Tom","Bob"};
-            
-            
+            //person = personName;
+            //person = new List<string>{ "john", "Tom", "Bob" };
+            person = new List<string>();
+            personName.Add("John");
+            personName.Add("Tom");
+            personName.Add("Bob");
+
         }
 
         //method

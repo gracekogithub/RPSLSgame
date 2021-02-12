@@ -9,25 +9,26 @@ namespace RPSLS
     class GameSpace
     {
         //variables
-        public HumanPlayers person;
+        public List<HumanPlayers> personN;
         public AIplayer computer;
-        public string[] gesture;
+        //public string[] gesture;
+        public List<GestureOption> gestureN;
+
+        public int winningScore;
+        public int tie;
+        public bool playingAgain;
         //constructor
         public GameSpace()
         {
-            person = new HumanPlayers("");
+            personN = new List<HumanPlayers>();
             computer = new AIplayer("");
-            string[] gesture = new string[] { "Rock","Paper","Scissors","Lizard","Spock" };
-            this.gesture = gesture;
+            gestureN = new List<GestureOption>();
+      
+            winningScore = 0;
+            tie = 0;
+            playingAgain = true;
 
         }
-        //choose 2 players(human vs human)
-        //play 3 times to select a winner
-        //the losing memebers will be removed from game
-        //the first winner will choose last person
-        //the winner will play with Ai
-        //claim winner
-
         //method
         public void PlayGame()
         {
@@ -46,11 +47,29 @@ namespace RPSLS
                               "Scissors decapitates Lizard\n"+
                               "Lizard eats Paper\n"+
                               "Paper disproves Spock\n"+
-                              "Spock vaporizes Rock");
+                              "Spock vaporizes Rock\bNow, please choose your gestion option\'Rock,Paper,Scissors,Lizard, or Spock\'");
         }
         public void ChooseGesture()
         {
-            Console.WriteLine($"Please, choose your gesture option: \n{person.personName[0]} chose {gesture[0]}");
+            Console.WriteLine($"Please, {personN[0].person} chose {gestureN[0].gesture}");
+            
+            
+            
+
+            //if ("JohnPickGesture" == "Rock")
+            //{
+            //    if (userInput == "rock")
+            //    {
+            //        Console.WriteLine("tie");
+            //    }
+            //    if (userInput == "Paper")
+            //    {
+            //        Console.WriteLine("You lost");
+            //        winningScore++;
+            //    }
+            //    Console.WriteLine();
+                
+            //}
             
         }
 
