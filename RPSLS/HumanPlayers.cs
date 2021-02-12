@@ -9,16 +9,17 @@ namespace RPSLS
     class HumanPlayers
     {
         //variables
-        public List<string> personName;
-        public Gesture gestureOption;
+        public List<string> personName; 
+
 
         //constructor
-        public HumanPlayers()
+        public HumanPlayers(string personName)
         {
-            personName = new List<string>();
-            string person1 = "John";
-            string person2 = "Tom";
-            string person3 = "Bob";
+            
+           
+            List<string> person= new List<string> { "John","Tom","Bob"};
+            
+            
         }
 
         //method

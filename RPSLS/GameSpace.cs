@@ -9,27 +9,18 @@ namespace RPSLS
     class GameSpace
     {
         //variables
-        public PlayerStage player;
-        public List<Gesture> option;
+        public HumanPlayers person;
+        public AIplayer computer;
+        public string[] gesture;
         //constructor
         public GameSpace()
         {
-            player = new PlayerStage();
-            option = new List<Gesture>();
-
-            Gesture gestureOption1 = new Gesture("Rock");
-            Gesture gesturOption2 = new Gesture("Paper");
-            Gesture gestureOption3 = new Gesture("Scissors");
-            Gesture gestureOption4 = new Gesture("Lizard");
-            Gesture gestureOption5 = new Gesture("Spock");
-            option.Add(gestureOption1);
-            option.Add(gesturOption2);
-            option.Add(gestureOption3);
-            option.Add(gestureOption4);
-            option.Add(gestureOption5);
+            person = new HumanPlayers("");
+            computer = new AIplayer("");
+            string[] gesture = new string[] { "Rock","Paper","Scissors","Lizard","Spock" };
+            this.gesture = gesture;
 
         }
-        //players: 3 people and 1 Ai
         //choose 2 players(human vs human)
         //play 3 times to select a winner
         //the losing memebers will be removed from game
@@ -42,6 +33,7 @@ namespace RPSLS
         {
             Console.WriteLine("Welcome! This is the rule how to play.");
             SetRule();
+            ChooseGesture();
         }
         public void SetRule()
         {
@@ -56,7 +48,11 @@ namespace RPSLS
                               "Paper disproves Spock\n"+
                               "Spock vaporizes Rock");
         }
-
+        public void ChooseGesture()
+        {
+            Console.WriteLine($"Please, choose your gesture option: \n{person.personName[0]} chose {gesture[0]}");
+            
+        }
 
 
 

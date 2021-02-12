@@ -46,10 +46,8 @@
     <Compile Include="AIplayer.cs" />
     <Compile Include="GameSpace.cs" />
     <Compile Include="HumanPlayers.cs" />
-    <Compile Include="PlayerStage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Gesture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
