@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class AiPlayer
+    public class AiPlayer : Player
     {
-
-
+        public string aiName;
+        public AiPlayer(string player): base (player)
+        {
+            aiName = player;
+        }
     }
 }

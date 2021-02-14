@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class Player
+    public abstract class Player
     {
         protected string player;
-        protected string chosenGesture;
-        protected List<string> gesture = new List<string>();
+        public List<string> gesture = new List<string>();
+       
 
-        public Player(string player, string chosenGesture) 
+        public Player(string player) 
         {
             this.player = player;
-            this.chosenGesture = chosenGesture;
+            
+          
             gesture.Add("rock");
             gesture.Add("paper");
             gesture.Add("scissors");
@@ -23,12 +24,14 @@ namespace RPSLS
             gesture.Add("spock");
         }
 
-        public void Play()
+        public virtual void Play(HumanPlayers players)
         {
-            Console.WriteLine("player one chose: ");
+            Console.WriteLine("Please choose 1-rock,2-paper,3-scissors,4-lizard,5-spock: ");
             string user = Console.ReadLine();
+            bool playAgain = true;
             int userScore = 0, playerScore = 0;
-            for (int i = 0; i < 6; i++)
+            while (playAgain == true)
+            while (playerScore < 3 || userScore < 3)
             {
                 
                 switch (user)
@@ -115,9 +118,36 @@ namespace RPSLS
                             userScore++;
                         }
                         break;
-
+                    default:
+                        Console.WriteLine("Your input is invalid. Please try again");
+                        break;
                 }
+                    if (playerScore==3)
+                    {
+                        Console.WriteLine("player won the game");
+                    }
+                    else if (userScore == 3)
+                    {
+                        Console.WriteLine("user won the game");
+                    }
+                    else
+                    {
 
+                    }
+            }
+            Console.WriteLine("If you want to play again, plese answer with yes or no. ");
+            string answer = Console.ReadLine();
+            if (answer == "yes")
+            {
+                playAgain = true;
+            }
+            else if (answer == "no")
+            {
+                playAgain = false;
+            }
+            else
+            {
+                Console.WriteLine("try again");
             }
         }
     }

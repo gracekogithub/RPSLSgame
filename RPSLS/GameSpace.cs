@@ -9,8 +9,8 @@ namespace RPSLS
     public class GameSpace
     {
         //variables
-       
-        
+
+        Player game;
 
         //constructor
         public GameSpace()
@@ -20,20 +20,23 @@ namespace RPSLS
 
         
         //method
+        public void Simulation()
+        {
+            Welcome();
+            GameInstruction();
+            
+        }
         public void Welcome()
         {
             Console.WriteLine("Welcome! This is the rule how to play.");
         }
-        public void PlayGame()
+        public void GameInstruction()
         {
             Console.WriteLine("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\n"+
                               "Lizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\n"+
                               "Paper disproves Spock\nSpock vaporizes Rock\n" +
                               "Now, please choose your gesture option\'Rock,Paper,Scissors,Lizard, or Spock\': ");      
         }
-        public void SelectPlayer()
-        {
-            Console.WriteLine("John and Tom will play first");
-        }
+        
     }
 }
