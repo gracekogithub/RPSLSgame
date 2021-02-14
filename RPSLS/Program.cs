@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            GameSpace play = new GameSpace();
-            play.PlayGame();
 
-            
+            Console.WriteLine();
             Console.ReadLine();
         }
     }

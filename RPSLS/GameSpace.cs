@@ -6,51 +6,34 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class GameSpace
+    public class GameSpace
     {
         //variables
-        Player playerOne;
-        Player playerTwo;
-
-        //public List<string> gesture;
-
+       
         
+
         //constructor
         public GameSpace()
         {
            
-            this.playerOne = playerOne;
-            this.playerTwo = playerTwo;
-           
-      
-            
+        }   
 
-        }
+        
         //method
-        public void PlayGame()
+        public void Welcome()
         {
             Console.WriteLine("Welcome! This is the rule how to play.");
-            SetRule();
-           
         }
-        public void SetRule()
+        public void PlayGame()
         {
-            Console.WriteLine("Rock crushes Scissors\n" +
-                              "Scissors cuts Paper\n"+
-                              "Paper covers Rock\n"+
-                              "Rock crushes Lizard\n"+
-                              "Lizard poisons Spock\n"+
-                              "Spock smashes Scissors\n"+
-                              "Scissors decapitates Lizard\n"+
-                              "Lizard eats Paper\n"+
-                              "Paper disproves Spock\n"+
-                              "Spock vaporizes Rock\b" +
-                              "Now, please choose your gesture option\'Rock,Paper,Scissors,Lizard, or Spock\': ");
+            Console.WriteLine("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\n"+
+                              "Lizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\n"+
+                              "Paper disproves Spock\nSpock vaporizes Rock\n" +
+                              "Now, please choose your gesture option\'Rock,Paper,Scissors,Lizard, or Spock\': ");      
         }
-      
-
-
-
-
+        public void SelectPlayer()
+        {
+            Console.WriteLine("John and Tom will play first");
+        }
     }
 }
