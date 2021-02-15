@@ -17,15 +17,13 @@ namespace RPSLS
             name.Add("John");
             name.Add("Tom");
             name.Add("Bob");
-
-            
-           
         }
-        public override void Play()
+        public override void ChooseGesture()
         {
-            int i = 0;
-             
-            Console.WriteLine($"player {name[i]} is next to play");
+            
+            Console.WriteLine($"player {name} will start the game");
+            Console.WriteLine("Please choose gesture");
+            choice = Console.ReadLine();
 
         }
 

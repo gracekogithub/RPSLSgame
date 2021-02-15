@@ -13,10 +13,20 @@ namespace RPSLS
         {
             aiName = player;
         }
-        public override void Play()
+
+        // Override and implement the ChooseGesture method
+        // We need to automatically select a random gesture out of the list of gestures
+        // Generate a random number between zero and the max index number of our gestures list
+        // Set the choice variable eqaul to our gestures list at the index of our randomly generated number
+
+        public override void ChooseGesture()
         {
-            base.Play();
-            Console.WriteLine("child");
+            var random = new Random();
+            var gesturesAi = new List<string> { "rock","paper","scissors","lizard","spock" };
+            int index = random.Next(gesturesAi.Count);
+            Console.WriteLine(gesturesAi[index]);
+
         }
+
     }
 }
