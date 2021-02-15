@@ -10,11 +10,13 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            HumanPlayers name = new HumanPlayers("John");
+            name.Play();
+            //AiPlayer aiName = new AiPlayer("C101");
+            //aiName.Play();
             GameSpace space = new GameSpace();
             space.Simulation();
-            
-           
-            
+
             Console.WriteLine();
             Console.ReadLine();
         }

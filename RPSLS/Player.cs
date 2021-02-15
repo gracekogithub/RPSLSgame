@@ -8,13 +8,15 @@ namespace RPSLS
 {
     public abstract class Player
     {
-        protected string player;
-        public List<string> gesture = new List<string>();
+        public string player; /*{ get; set; }*/
+        public List<string> gesture; /*{ get; set; }*/
        
 
         public Player(string player) 
         {
+         
             this.player = player;
+            this.gesture = new List<string>();
             
           
             gesture.Add("rock");
@@ -24,9 +26,9 @@ namespace RPSLS
             gesture.Add("spock");
         }
 
-        public virtual void Play(HumanPlayers players)
+        public virtual void Play()
         {
-            Console.WriteLine("Please choose 1-rock,2-paper,3-scissors,4-lizard,5-spock: ");
+            Console.WriteLine("Please choose rock, paper, scissors, lizard, spock: ");
             string user = Console.ReadLine();
             bool playAgain = true;
             int userScore = 0, playerScore = 0;

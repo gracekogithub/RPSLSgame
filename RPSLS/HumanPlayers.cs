@@ -9,13 +9,19 @@ namespace RPSLS
     public class HumanPlayers : Player
     {
 
-        public string playerName;
-      
-        public HumanPlayers(string player) : base (player)
+
+
+        public HumanPlayers(string humanName) : base(humanName)
         {
-            playerName = player;
+            Console.WriteLine($"player {humanName} is next to play");
+            
+        }
+        public override void Play()
+        {
+            base.Play();
            
         }
-        
+
+
     }
 }

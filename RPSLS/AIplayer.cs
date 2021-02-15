@@ -13,5 +13,10 @@ namespace RPSLS
         {
             aiName = player;
         }
+        public override void Play()
+        {
+            base.Play();
+            Console.WriteLine("child");
+        }
     }
 }

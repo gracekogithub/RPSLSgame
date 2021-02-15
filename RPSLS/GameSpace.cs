@@ -10,7 +10,7 @@ namespace RPSLS
     {
         //variables
 
-        Player game;
+        Player player;
 
         //constructor
         public GameSpace()
@@ -24,6 +24,7 @@ namespace RPSLS
         {
             Welcome();
             GameInstruction();
+           
             
         }
         public void Welcome()
