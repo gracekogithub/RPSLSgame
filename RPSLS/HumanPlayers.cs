@@ -14,7 +14,7 @@ namespace RPSLS
         public HumanPlayers(string humanName) : base(humanName)
         {
             Console.WriteLine($"player {humanName} is next to play");
-            
+           
         }
         public override void Play()
         {

@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
+   
     public abstract class Player
     {
         public string player; /*{ get; set; }*/
         public List<string> gesture; /*{ get; set; }*/
-       
 
         public Player(string player) 
         {
-         
             this.player = player;
             this.gesture = new List<string>();
-            
-          
             gesture.Add("rock");
             gesture.Add("paper");
             gesture.Add("scissors");
@@ -29,128 +26,113 @@ namespace RPSLS
         public virtual void Play()
         {
             Console.WriteLine("Please choose rock, paper, scissors, lizard, spock: ");
-            string user = Console.ReadLine();
-            bool playAgain = true;
             int userScore = 0, playerScore = 0;
-            while (playAgain == true)
+            //bool playAgain = true;
             while (playerScore < 3 || userScore < 3)
             {
-                
-                switch (user)
+                string user = Console.ReadLine();
+                if (user == "rock")
                 {
-                    case "rock":
-                        if (player=="rock")
-                        {
-                            Console.WriteLine("tie, try again!");
-                        }
-                        else if (player=="paper"||player=="spock")
-                        {
-                            Console.WriteLine("you loose");
-                            playerScore++;
-                        }
-                        else if (player == "sicessors"||player =="lizard")
-                        {
-                            Console.WriteLine("you win");
-                            userScore++;
-                        }
-                        break;
+                    if (player == "rock")
+                    {
+                        Console.WriteLine("tie, try again!");
 
-                    case "paper":
-                        if (player == "paper")
-                        {
-                            Console.WriteLine("tie, try again!");
-                        }
-                        else if (player == "scissors" || player == "lizard")
-                        {
-                            Console.WriteLine("you loose");
-                            playerScore++;
-                        }
-                        else if (player == "rock" || player == "spock")
-                        {
-                            Console.WriteLine("you win");
-                            userScore++;
-                        }
-
-                        break;
-                    case "scissor":
-                        if (player == "scissor")
-                        {
-                            Console.WriteLine("tie, try again!");
-                        }
-                        else if (player == "rock" || player == "spock")
-                        {
-                            Console.WriteLine("loose");
-                            playerScore++;
-                        }
-                        else if (player == "paper" || player == "lizard")
-                        {
-                            Console.WriteLine("win");
-                            userScore++;
-                        }
-                        break;
-                    case "lizard":
-                        if (player == "lizard")
-                        {
-                            Console.WriteLine("tie, try again!");
-                        }
-                        else if (player == "scissor" || player == "rock")
-                        {
-                            Console.WriteLine("loose");
-                            playerScore++;
-                        }
-                        else if (player == "spock" || player == "paper")
-                        {
-                            Console.WriteLine("win");
-                            userScore++;
-                        }
-                        break;
-                    case "spock":
-                        if (player == "spock")
-                        {
-                            Console.WriteLine("tie, try again!");
-                        }
-                        else if (player == "paper" || player == "lizard")
-                        {
-                            Console.WriteLine("loose");
-                            playerScore++;
-                        }
-                        else if (player == "sicessors" || player == "rock")
-                        {
-                            Console.WriteLine("win");
-                            userScore++;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Your input is invalid. Please try again");
-                        break;
+                    }
+                    else if (player == "paper" || player == "spock")
+                    {
+                        Console.WriteLine("you loose");
+                        playerScore++;
+                    }
+                    else if (player == "sicessors" || player == "lizard")
+                    {
+                        Console.WriteLine("you win");
+                        userScore++;
+                    }
                 }
-                    if (playerScore==3)
+                if (user == "paper")
+                {
+                    if (player == "paper")
                     {
-                        Console.WriteLine("player won the game");
+                        Console.WriteLine("tie, try again!");
                     }
-                    else if (userScore == 3)
+                    else if (player == "scissors" || player == "lizard")
                     {
-                        Console.WriteLine("user won the game");
+                        Console.WriteLine("you loose");
+                        playerScore++;
                     }
-                    else
+                    else if (player == "rock" || player == "spock")
                     {
+                        Console.WriteLine("you win");
+                        userScore++;
+                    }
+                }
 
+                if (user == "scissor")
+                {
+                    if (player == "scissor")
+                    {
+                        Console.WriteLine("tie, try again!");
                     }
+                    else if (player == "spock" || player == "rock")
+                    {
+                        Console.WriteLine("you loose");
+                        playerScore++;
+                    }
+                    else if (player == "lizard" || player == "paper")
+                    {
+                        Console.WriteLine("you win");
+                        userScore++;
+                    }
+                }
+                if (user == "lizard")
+                {
+                    if (player == "lizard")
+                    {
+                        Console.WriteLine("tie, try again!");
+                    }
+                    else if (player == "scissor" || player == "rock")
+                    {
+                        Console.WriteLine("you loose");
+                        playerScore++;
+                    }
+                    else if (player == "spock" || player == "paper")
+                    {
+                        Console.WriteLine("you win");
+                        userScore++;
+                    }
+                }
+                if (user == "spock")
+                {
+                    if (player == "spock")
+                    {
+                        Console.WriteLine("tie, try again!");
+                    }
+                    else if (player == "paper" || player == "lizard")
+                    {
+                        Console.WriteLine("you loose");
+                        playerScore++;
+                    }
+                    else if (player == "sicessors" || player == "rock")
+                    {
+                        Console.WriteLine("you win");
+                        userScore++;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Your input is invalid. Please try again");
+                }
             }
-            Console.WriteLine("If you want to play again, plese answer with yes or no. ");
-            string answer = Console.ReadLine();
-            if (answer == "yes")
+            if (playerScore == 3)
             {
-                playAgain = true;
+                Console.WriteLine("player won the game");
             }
-            else if (answer == "no")
+            else if (userScore == 3)
             {
-                playAgain = false;
-            }
-            else
-            {
-                Console.WriteLine("try again");
+                Console.WriteLine("user won the game");
             }
         }
+
     }
+    
 }
