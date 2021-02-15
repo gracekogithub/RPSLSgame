@@ -9,13 +9,16 @@ namespace RPSLS
    
     public abstract class Player
     {
-        public string player; /*{ get; set; }*/
-        public List<string> gesture; /*{ get; set; }*/
+        public HumanPlayers name;
+        public string player;//{get; set; }
+        public List<string> gesture; 
 
         public Player(string player) 
         {
             this.player = player;
-            this.gesture = new List<string>();
+            name = new HumanPlayers("");
+            
+            gesture = new List<string>();
             gesture.Add("rock");
             gesture.Add("paper");
             gesture.Add("scissors");
@@ -131,7 +134,9 @@ namespace RPSLS
             {
                 Console.WriteLine("user won the game");
             }
+            Console.ReadLine();
         }
+        
 
     }
     

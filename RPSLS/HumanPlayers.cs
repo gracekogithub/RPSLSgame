@@ -9,17 +9,24 @@ namespace RPSLS
     public class HumanPlayers : Player
     {
 
-
+        List<string> name;
 
         public HumanPlayers(string humanName) : base(humanName)
         {
-            Console.WriteLine($"player {humanName} is next to play");
+            name = new List<string>();
+            name.Add("John");
+            name.Add("Tom");
+            name.Add("Bob");
+
+            
            
         }
         public override void Play()
         {
-            base.Play();
-           
+            int i = 0;
+             
+            Console.WriteLine($"player {name[i]} is next to play");
+
         }
 
 
