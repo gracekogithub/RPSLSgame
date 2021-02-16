@@ -22,9 +22,11 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             var random = new Random();
-            var gesturesAi = new List<string> { "rock","paper","scissors","lizard","spock" };
-            int index = random.Next(gesturesAi.Count);
-            Console.WriteLine(gesturesAi[index]);
+            int index = random.Next(gestures.Count);
+            choice = gestures[index];
+            
+
+            //Console.WriteLine(gestures[index]);
 
         }
 

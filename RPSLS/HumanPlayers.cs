@@ -22,7 +22,7 @@ namespace RPSLS
         {
             
             Console.WriteLine($"player {name} will start the game");
-            Console.WriteLine("Please choose gesture");
+            Console.WriteLine("Please choose a gesture");
             choice = Console.ReadLine();
 
         }
