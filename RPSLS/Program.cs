@@ -10,6 +10,7 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+          
             GameSpace gamespace = new GameSpace();
             gamespace.Simulation();
             Console.WriteLine();

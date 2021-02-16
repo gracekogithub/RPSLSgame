@@ -13,35 +13,33 @@ namespace RPSLS
         bool repeat;
         HumanPlayers humanName;
         AiPlayer aiName;
+        int userScore;
+        int playerScore;
         //constructor
         public GameSpace()
         {
-            
+            userScore = 0;
+            playerScore = 0;
         }   
         //method
         public void Simulation()
         {
             Welcome();
-            bool repeat = true;
-            while (repeat == true)
-            {
-                GameInstruction();
-                PlayGame();
-                PlayAgain();
-            }
+            GameInstruction();
+            PlayGame();
+            WinnerIs();
         }
-        public void PlayAgain()
+        
+        
+        public void WinnerIs()
         {
-            Console.WriteLine("If you want to play again, press yes or no to exit.");
-            string userInput = Console.ReadLine();
-            if (userInput == "yes")
+            if (playerScore == 3 && userScore <3)
             {
-                GameInstruction();
-                PlayGame();
+                Console.WriteLine("player won the game");
             }
-            else
+            else if (userScore == 3 && playerScore <3)
             {
-                Console.WriteLine("Game over!");
+                Console.WriteLine("user won the game");
             }
         }
         public void Welcome()
@@ -57,46 +55,45 @@ namespace RPSLS
         }
         public void PlayGame()
         {
-            Console.WriteLine("rock, paper, scissors, lizard, spock... ");
-
-            int userScore = 0, playerScore = 0;
-            //bool playAgain = true;
+            
+            
             while (playerScore < 3 || userScore < 3)
             {
-                int i = 0;
-                
+                Console.WriteLine("rock, paper, scissors, lizard, spock... ");
                 string user = Console.ReadLine();
+                
+                string player = Console.ReadLine();
              
                 if (user == "rock")
                 {
-                    if (humanName.name == "rock")
+                    if (player == "rock")
                     {
                         Console.WriteLine($"tie, try again!");
 
                     }
-                    else if (humanName.name == "paper" || humanName.name == "spock")
+                    else if (player == "paper" || player == "spock")
                     {
-                        Console.WriteLine($"{humanName.name} win, you loose");
+                        Console.WriteLine($"{player} win, you loose");
                         playerScore++;
                     }
-                    else if (humanName.name == "sicessors" || humanName.name == "lizard")
+                    else if (player == "sicessors" || player == "lizard")
                     {
-                        Console.WriteLine($"{humanName.name[i]} win, you win");
+                        Console.WriteLine($"{player} win, you win");
                         userScore++;
                     }
                 }
                 if (user == "paper")
                 {
-                    if (humanName.name == "paper")
+                    if (player == "paper")
                     {
                         Console.WriteLine("tie, try again!");
                     }
-                    else if (humanName.name == "scissors" || humanName.name == "lizard")
+                    else if (player == "scissors" || player == "lizard")
                     {
                         Console.WriteLine("you loose");
                         playerScore++;
                     }
-                    else if (humanName.name == "rock" || humanName.name == "spock")
+                    else if (player == "rock" || player == "spock")
                     {
                         Console.WriteLine("you win");
                         userScore++;
@@ -105,16 +102,16 @@ namespace RPSLS
 
                 if (user == "scissor")
                 {
-                    if (humanName.name == "scissor")
+                    if (player == "scissor")
                     {
                         Console.WriteLine("tie, try again!");
                     }
-                    else if (humanName.name == "spock" || humanName.name == "rock")
+                    else if (player == "spock" || player == "rock")
                     {
                         Console.WriteLine("you loose");
                         playerScore++;
                     }
-                    else if (humanName.name == "lizard" || humanName.name == "paper")
+                    else if (player == "lizard" || player == "paper")
                     {
                         Console.WriteLine("you win");
                         userScore++;
@@ -122,16 +119,16 @@ namespace RPSLS
                 }
                 if (user == "lizard")
                 {
-                    if (humanName.name == "lizard")
+                    if (player == "lizard")
                     {
                         Console.WriteLine("tie, try again!");
                     }
-                    else if (humanName.name == "scissor" || humanName.name == "rock")
+                    else if (player == "scissor" || player == "rock")
                     {
                         Console.WriteLine("you loose");
                         playerScore++;
                     }
-                    else if (humanName.name == "spock" || humanName.name == "paper")
+                    else if (player == "spock" || player == "paper")
                     {
                         Console.WriteLine("you win");
                         userScore++;
@@ -139,16 +136,16 @@ namespace RPSLS
                 }
                 if (user == "spock")
                 {
-                    if (humanName.name == "spock")
+                    if (player == "spock")
                     {
                         Console.WriteLine("tie, try again!");
                     }
-                    else if (humanName.name == "paper" || humanName.name == "lizard")
+                    else if (player == "paper" || player == "lizard")
                     {
                         Console.WriteLine("you loose");
                         playerScore++;
                     }
-                    else if (humanName.name == "sicessors" || humanName.name == "rock")
+                    else if (player == "sicessors" || player == "rock")
                     {
                         Console.WriteLine("you win");
                         userScore++;
@@ -159,14 +156,7 @@ namespace RPSLS
                     Console.WriteLine("Your input is invalid. Please try again");
                 }
             }
-            if (playerScore == 3)
-            {
-                Console.WriteLine("player won the game");
-            }
-            else if (userScore == 3)
-            {
-                Console.WriteLine("user won the game");
-            }
+            
             Console.ReadLine();
         }
     }

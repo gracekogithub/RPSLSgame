@@ -27,7 +27,7 @@ namespace RPSLS
 
         public virtual void ChooseGesture()
         {
-            Console.WriteLine("Please choose rock, paper, scissors, lizard, spock: ");
+            Console.WriteLine();
             choice = Console.ReadLine();
             
            // choose a gesture
