@@ -18,6 +18,7 @@ namespace RPSLS
            
             
             gestures = new List<string>();
+            
             gestures.Add("rock");
             gestures.Add("paper");
             gestures.Add("scissors");
@@ -25,15 +26,19 @@ namespace RPSLS
             gestures.Add("spock");
         }
 
+        public virtual void DisplayGestures()
+        {
+
+            Console.WriteLine("Your gesture options are: ");
+            for (int i = 0; i < gestures.Count; i++)
+            {
+                Console.WriteLine(gestures[i]);
+            }
+        }
         public virtual void ChooseGesture()
         {
-            Console.WriteLine();
-            choice = Console.ReadLine();
-            
-           // choose a gesture
-           // return the gesture that is chosen
+            Console.WriteLine(Console.ReadLine());
         }
-        
 
     }
     

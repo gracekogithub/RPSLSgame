@@ -20,10 +20,12 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
-            
-            Console.WriteLine($"player {name} will start the game");
-            Console.WriteLine("Please choose a gesture");
+            DisplayGestures();
             choice = Console.ReadLine();
+            if (choice != "rock" && choice != "paper")
+            {
+                ChooseGesture();
+            }
 
         }
 
