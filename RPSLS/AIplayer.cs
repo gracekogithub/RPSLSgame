@@ -21,14 +21,12 @@ namespace RPSLS
 
         public override void ChooseGesture()
         {
+            Console.WriteLine("CS1 chose: ");
             var random = new Random();
             int randomNumber = random.Next(gestures.Count);
-          
             choice = gestures[randomNumber];
-            
-
-            //Console.WriteLine(gestures[index]);
-
+            Console.WriteLine(choice);
+          
         }
 
     }

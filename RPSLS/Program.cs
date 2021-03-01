@@ -13,8 +13,9 @@ namespace RPSLS
           
             GameSpace gamespace = new GameSpace();
             gamespace.Simulation();
-            Console.WriteLine();
             Console.ReadLine();
+            
         }
+        
     }
 }

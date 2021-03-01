@@ -30,6 +30,7 @@ namespace RPSLS
             ChooseGameType();
             PlayGame();
             WinnerIs();
+            WantToPlayAgain();
         }
         public void Welcome()
         {
@@ -44,7 +45,7 @@ namespace RPSLS
         }
         public void ChooseGameType()
         {
-            Console.WriteLine("Please choose gametype. Press 1 for single player or 2 for multiplayer");
+            Console.WriteLine("Please choose gametype. Press 1 for Ai player or 2 for human player");
             string input = Console.ReadLine();
             if (input == "1")
             {
@@ -52,6 +53,7 @@ namespace RPSLS
             }
             else if (input == "2")
             {
+               
                 playerTwo = new HumanPlayers("Player's name is: ");
             }
             else
@@ -63,24 +65,25 @@ namespace RPSLS
         {
             while (playerOneScore < 3 || playerTwoScore < 3)
             {
-                
-                Console.WriteLine("rock, paper, scissors, lizard, spock... what is your gesture?");
+                Console.WriteLine("rock, paper, scissors, lizard, spock... ");
+
+                //string user = Console.ReadLine().ToLower();
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
-                string user = Console.ReadLine().ToLower();
                 if (playerOne.choice == playerTwo.choice)
                 {
-                    playerOne.ChooseGesture();
+                    playerTwo.ChooseGesture();
                     Console.WriteLine($"tie, try again!");
                 }
-                else if ((playerOne.choice == "paper" && playerTwo.choice == "rock") || (playerOne.choice == "spock" && playerTwo.choice == "rock" ))
+                if ((playerOne.choice == "paper" && playerTwo.choice == "rock") || (playerOne.choice == "spock" && playerTwo.choice == "rock" ))
                 {
-                    Console.WriteLine($"{playerOne} win, you loose");
+                    playerTwo.ChooseGesture();
+                    Console.WriteLine($"you loose");
                     playerTwoScore++;
                 }
-                else if ((playerOne.choice == "sicessors" && playerTwo.choice == "rock") || (playerOne.choice == "lizard" && playerTwo.choice == "rock"))
+                if ((playerOne.choice == "scissors" && playerTwo.choice == "rock") || (playerOne.choice == "lizard" && playerTwo.choice == "rock"))
                 {
-                    Console.WriteLine($"{playerOne} win, you win");
+                    Console.WriteLine($"you win");
                     playerOneScore++;
                 }
                 else if ((playerOne.choice == "paper" && playerTwo.choice == "scissors") || (playerOne.choice == "paper" && playerTwo.choice == "lizard"))
@@ -98,29 +101,27 @@ namespace RPSLS
                     Console.WriteLine("you loose");
                     playerTwoScore++;
                 }
-                else if ((playerOne.choice == "scissor" && playerTwo.choice == "lizard") || (playerOne.choice == "scissor" && playerTwo.choice == "paper"))
+                if ((playerOne.choice == "scissor" && playerTwo.choice == "lizard") || (playerOne.choice == "scissor" && playerTwo.choice == "paper"))
                 {
                     Console.WriteLine("you win");
                     playerOneScore++;
                 }
-
-
-                else if ((playerOne.choice == "lizard" && playerTwo.choice == "scissor") || (playerOne.choice == "lizard" && playerTwo.choice == "rock"))
+                if ((playerOne.choice == "lizard" && playerTwo.choice == "scissor") || (playerOne.choice == "lizard" && playerTwo.choice == "rock"))
                 {
                     Console.WriteLine("you loose");
                     playerTwoScore++;
                 }
-                else if ((playerOne.choice == "lizard" && playerTwo.choice == "spock") || (playerOne.choice == "lizard" && playerTwo.choice == "paper"))
+                if ((playerOne.choice == "lizard" && playerTwo.choice == "spock") || (playerOne.choice == "lizard" && playerTwo.choice == "paper"))
                 {
                     Console.WriteLine("you win");
                     playerOneScore++;
                 }
-                else if ((playerOne.choice == "spock" && playerTwo.choice == "paper") || (playerOne.choice == "spock" && playerTwo.choice == "lizard"))
+                if ((playerOne.choice == "spock" && playerTwo.choice == "paper") || (playerOne.choice == "spock" && playerTwo.choice == "lizard"))
                 {
                     Console.WriteLine("you loose");
                     playerTwoScore++;
                 }
-                else if ((playerOne.choice == "spock" && playerTwo.choice == "sicessors") || (playerOne.choice == "spock" && playerTwo.choice == "rock"))
+                if ((playerOne.choice == "spock" && playerTwo.choice == "sicessors") || (playerOne.choice == "spock" && playerTwo.choice == "rock"))
                 {
                     Console.WriteLine("you win");
                     playerOneScore++;
@@ -144,7 +145,24 @@ namespace RPSLS
                 {
                     Console.WriteLine("player2 won the game");
                 }
-
+            }
+        }
+        public void WantToPlayAgain()
+        {
+            Console.WriteLine("Do you want to play again? Please type yes or no: ");
+            string input = Console.ReadLine().ToLower();
+            if (input == "yes")
+            {
+                GameInstruction();
+            }
+            else if (input == "no")
+            {
+                Console.WriteLine("Thank you for playing! Bye");
+                System.Environment.Exit(0);
+            }
+            else
+            {
+                WantToPlayAgain();
             }
         }
     }

@@ -20,15 +20,14 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
+            //base.ChooseGesture();
             DisplayGestures();
             choice = Console.ReadLine();
-            if (choice != "rock" && choice != "paper")
-            {
-                ChooseGesture();
-            }
+            //if(choice != "rock" && choice != "paper")
+            //{
+            //    ChooseGesture();
+            //}
 
         }
-
-
     }
 }

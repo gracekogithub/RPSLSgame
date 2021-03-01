@@ -29,10 +29,11 @@ namespace RPSLS
         public virtual void DisplayGestures()
         {
 
-            Console.WriteLine("Your gesture options are: ");
+            Console.WriteLine("Type your gesture ");
             for (int i = 0; i < gestures.Count; i++)
             {
                 Console.WriteLine(gestures[i]);
+               
             }
         }
         public virtual void ChooseGesture()
